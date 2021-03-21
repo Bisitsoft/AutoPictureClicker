@@ -108,6 +108,8 @@ namespace AutoPictureClicker
             //    Environment.Exit(0);
             //}
             #endregion
+
+            Exit(0);
         }
 
         private static bool ArgReader(string[] args, out ProgramArguments programArguments)
@@ -157,6 +159,14 @@ namespace AutoPictureClicker
                             programArguments.ExitClickCount = int.Parse(args[++i]);
                             break;
 
+                        case "--exit-flag":
+                            if (i + 1 >= args.Length)
+                            {
+                                throw new ArgumentException("--exit-click-count: Lost value of count.");
+                            }
+                            programArguments.ExitFlagPath = args[++i];
+                            break;
+
                         case "--output-working-data":
                             throw new NotSupportedException();
                             break;
@@ -198,6 +208,20 @@ namespace AutoPictureClicker
             {
                 resultFile.Delete();
             }
+        }
+
+        public static void Exit(int exitCode)
+        {
+            try
+            {
+                mainWindow.Close();
+            }
+            catch (Exception) {; }
+            if (ProgramArguments.ExitFlagPath != null)
+            {
+                File.Create(ProgramArguments.ExitFlagPath).Close();
+            }
+            Environment.Exit(exitCode);
         }
     }
 }

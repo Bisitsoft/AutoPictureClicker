@@ -11,6 +11,7 @@ namespace AutoPictureClicker
         public static readonly bool IsDebug = true;
 
         public int ExitClickCount = -1;
+        public string ExitFlagPath = null;
 
         public bool NoLogo = false;
         public bool StartThreadDirectly = false;

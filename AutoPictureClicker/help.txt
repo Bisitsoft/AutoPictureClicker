@@ -23,6 +23,7 @@ config.config可直接用记事本修改，请认真阅读config内内容，在�
 启动参数：（#未完成）
 # "--clean": 清理一些程序产生的垃圾。
 "--exit-click-count <count>": 设置在点击了多少次后自动退出。
+"--exit-flag <path>": 在退出后创建一个path中指定的文件。
 # "-h" "--help": 获取帮助。（暂时没用）
 "--nologo": 启动时跳过启动信息。
 # "--output-working-data": 输出每一次扫描的信息。

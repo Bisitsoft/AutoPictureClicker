@@ -161,8 +161,7 @@ namespace AutoPictureClicker
                         {
                             this.Invoke((Action)(() =>
                             {
-#warning this.Close();
-                                this.Close();
+                                Program.Exit(0);
                             }));
                         }
                     }
