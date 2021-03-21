@@ -141,25 +141,38 @@ namespace AutoPictureClicker
                     Environment.Exit(0);
                 }
 
-                foreach (string arg in args)
+                for (int i = 0; i < args.Length; i++)
                 {
-                    switch (arg)
+                    switch (args[i])
                     {
-                        case "--skip-startup-info":
-                            programArguments.SkipStartupInfo = true;
+                        case "--nologo":
+                            programArguments.NoLogo = true;
                             break;
+
+                        case "--exit-click-count":
+                            if (i + 1 >= args.Length)
+                            {
+                                throw new ArgumentException("--exit-click-count: Lost value of count.");
+                            }
+                            programArguments.ExitClickCount = int.Parse(args[++i]);
+                            break;
+
+                        case "--output-working-data":
+                            throw new NotSupportedException();
+                            break;
+
                         case "--start-thread-directly":
-                            //programArguments.SkipStartupInfo = true;
+                            programArguments.NoLogo = true;
                             programArguments.StartThreadDirectly = true;
                             break;
-                        case "--output-working-data":
 
-                            break;
+                        #region ==Catched==
                         case "--clean":
-
-                            break;
                         case "-h":
                         case "--help":
+                            break;
+                        #endregion
+
                         default:
                             break;
                     }

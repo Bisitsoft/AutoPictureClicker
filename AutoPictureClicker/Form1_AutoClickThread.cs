@@ -155,6 +155,16 @@ namespace AutoPictureClicker
                         ctis.lastLocation = new System.Drawing.Point(realX, realY);
                         ctis.clickCount++;
                         StatusStrip_Set_toolStripStatusLabel_ClickCount(ctis.clickCount);//UI
+
+                        //检查是否完成退出计数
+                        if(Program.ProgramArguments.ExitClickCount > 0 && Program.ProgramArguments.ExitClickCount <= ctis.clickCount)
+                        {
+                            this.Invoke((Action)(() =>
+                            {
+#warning this.Close();
+                                this.Close();
+                            }));
+                        }
                     }
 
                     //清理内存

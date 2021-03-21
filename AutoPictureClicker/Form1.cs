@@ -104,7 +104,9 @@ namespace AutoPictureClicker
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            if (!(Program.ProgramArguments.SkipStartupInfo || Program.ProgramArguments.StartThreadDirectly))
+            if (!(Program.ProgramArguments.NoLogo 
+                //|| Program.ProgramArguments.StartThreadDirectly
+                ))
             {
                 ShowMessage(
                     "欢迎使用Picture Clicker，这是一款能够自动点击指定图像的小工具。\n" +

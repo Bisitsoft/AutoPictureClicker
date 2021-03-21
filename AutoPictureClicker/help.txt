@@ -20,12 +20,14 @@ config.config可直接用记事本修改，请认真阅读config内内容，在�
 计时器建议设置为5s，电脑配置较差运行起来也还行，如果低于1s UI会很卡，请不要忘记可以用快捷键终止运行。
 阈值可以通过下侧状态栏的反馈调整到是当的值，太低的话可能会发生错误点击，太高的话可能无法定位图片，导致不会发生点击。
 
-启动参数：
-"--skip-startup-info": 启动时跳过启动信息。
-"--start-thread-directly": 直接启动线程。会自动打开--skip-startup-info开关。
-"--output-working-data": 输出每一次扫描的信息。
-"--clean": 清理一些程序产生的垃圾。
-"-h" "--help": 获取帮助。（暂时没用）
+启动参数：（#未完成）
+# "--clean": 清理一些程序产生的垃圾。
+"--exit-click-count <count>": 设置在点击了多少次后自动退出。
+# "-h" "--help": 获取帮助。（暂时没用）
+"--nologo": 启动时跳过启动信息。
+# "--output-working-data": 输出每一次扫描的信息。
+"--start-thread-directly": 直接启动线程。会自动设置"--nologo"。
+
 
 可以通过运行Clean.bat来清理程序产生的垃圾。
 

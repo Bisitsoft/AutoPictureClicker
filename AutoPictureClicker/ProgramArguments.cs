@@ -10,7 +10,9 @@ namespace AutoPictureClicker
     {
         public static readonly bool IsDebug = true;
 
-        public bool SkipStartupInfo = false;
+        public int ExitClickCount = -1;
+
+        public bool NoLogo = false;
         public bool StartThreadDirectly = false;
     }
 }
