@@ -23,6 +23,12 @@ namespace AutoPictureClicker
         {
             InitializeComponent();
 
+            if (Program.ProgramArguments.HideWhenBoot)
+            {
+                //this.Hide();
+                  this.WindowState = this.FormWindowState.Minimized;
+            }
+
             //初始化空控件
             lastTabIndexControl.Visible = true;
             lastTabIndexControl.TabIndex = int.MaxValue;
