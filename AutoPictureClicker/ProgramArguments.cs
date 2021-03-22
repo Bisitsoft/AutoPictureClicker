@@ -13,6 +13,7 @@ namespace AutoPictureClicker
         public int ExitClickCount = -1;
         public string ExitFlagPath = null;
 
+        public bool HideWhenBoot = false;
         public bool NoLogo = false;
         public bool StartThreadDirectly = false;
     }
