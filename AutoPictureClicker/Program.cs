@@ -167,6 +167,10 @@ namespace AutoPictureClicker
                             programArguments.ExitFlagPath = args[++i];
                             break;
 
+                        case "--hide":
+                            programArguments.HideWhenBoot = true;
+                            break;
+
                         case "--output-working-data":
                             throw new NotSupportedException();
                             break;
